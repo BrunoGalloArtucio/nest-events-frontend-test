@@ -20,7 +20,6 @@ test(
     "display sing up and log in buttons",
     { tag: "@fast" },
     async ({ page }) => {
-        console.log(process.env);
         const signUpButton = await page.getByRole("button", {
             name: "Sign Up",
         });
@@ -33,7 +32,7 @@ test(
     }
 );
 
-test.only("logs in successfully", { tag: "@slow" }, async ({ page }) => {
+test("logs in successfully", { tag: "@slow" }, async ({ page }) => {
     const logInButton = await page.getByRole("button", {
         name: "Log In",
     });

@@ -33,8 +33,6 @@ test("page navigation", { tag: "@slow" }, async ({ page, userAgent }) => {
     const [_, response] = await Promise.all([
         secondPageButton.click(),
         page.waitForResponse((response) => {
-            console.log(response.url());
-            console.log(response.status());
             return (
                 response.url().includes("/events?limit=5&offset=5") &&
                 response.status() === 200
